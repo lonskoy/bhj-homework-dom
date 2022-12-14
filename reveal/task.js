@@ -1,7 +1,8 @@
 const reveal = Array.from(document.querySelectorAll('.reveal'));
 
+
 function inVisible(el) {
-    const { top, bottom} = el.getBoundingClientRect();
+    const { top, bottom } = el.getBoundingClientRect();
     /*console.log(top);
     console.log('Высота экрана: ' + window.innerHeight);*/
 
@@ -13,8 +14,5 @@ function inVisible(el) {
     }
 }
 
-setInterval(() => {
-    inVisible(reveal[0]);
-    inVisible(reveal[1]);
-
-}, 1000);
+reveal[0].addEventListener('scroll', inVisible(reveal[0]));
+reveal[1].addEventListener('scroll', inVisible(reveal[1]));
