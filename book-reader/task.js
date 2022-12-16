@@ -4,7 +4,10 @@ const book = document.getElementsByClassName('book__content');
 
 
 arrFont.forEach(elem => {
-    elem.addEventListener('event', () =>{elem.preventDefault()}); //Так что ли?
+    elem.addEventListener('event', (event) => {
+        event.preventDefault();
+    });
+
     elem.addEventListener('click', () => {
     if(!elem.classList.contains('font-size_active')) {         //Элемент НЕ содержит класс font-size_active
         console.log('не содержит');
